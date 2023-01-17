@@ -51,5 +51,12 @@ public class ProductService {
 		}
 	}
 	
+	public ResponseEntity<Request> delete(Long id){
+	     repository.deleteById(id);
+	     
+	     request.setMessage("O produto foi removido com sucesso!");
+	     
+	     return new ResponseEntity<Request>(request, HttpStatus.OK);
+	}
 	
 }
