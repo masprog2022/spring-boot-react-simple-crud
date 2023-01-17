@@ -2,14 +2,21 @@ package com.masprog.api.products.entities;
 
 import org.springframework.stereotype.Component;
 
-import lombok.Getter;
-import lombok.Setter;
+
 
 @Component
-@Getter
-@Setter
 public class Request {
 	
 	private String message;
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
+	
 
 }
