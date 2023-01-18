@@ -3,7 +3,7 @@ import React from 'react'
 export default function Table() {
   return (
     <div>
-         <table>
+         <table className='table'>
             <thead>
                 <tr>
                     <th>#</th>

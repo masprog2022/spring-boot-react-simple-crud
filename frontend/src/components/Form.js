@@ -4,13 +4,13 @@ export default function Form() {
   return (
     <div>
          <form>
-            <input type='text' placeholder='Name' />
-            <input type='text' placeholder='brand' />
+            <input type='text' placeholder='Name' className='form-control' />
+            <input type='text' placeholder='brand' className='form-control'/>
 
-            <input type='button' value='Register' />
-            <input type='button' value='Update' />
-            <input type='button' value='Remove' />
-            <input type='button' value='Cancel' />
+            <input type='button' value='Register' className='btn btn-primary' />
+            <input type='button' value='Update' className='btn btn-warning'/>
+            <input type='button' value='Remove' className='btn btn-danger'/>
+            <input type='button' value='Cancel' className='btn btn-secondary' />
          </form>
     </div>
   )
