@@ -4,8 +4,8 @@ export default function Form({ button }) {
   return (
     <div>
       <form>
-        <input type="text" placeholder="Name" className="form-control" />
-        <input type="text" placeholder="brand" className="form-control" />
+        <input type="text" placeholder="Produto" className="form-control" />
+        <input type="text" placeholder="Marca" className="form-control" />
 
         {button ? (
           <input type="button" value="Register" className="btn btn-primary" />
