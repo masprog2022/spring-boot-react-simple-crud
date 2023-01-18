@@ -50,7 +50,12 @@ function App() {
     })
     .then(data => data.json())
     .then(data_inverted => {
-      console.log(data_inverted)
+      if(data_inverted.message !== undefined){
+        alert(data_inverted.message)
+      }else{
+        setProducts([...products, data_inverted])
+        alert('Produto Registado com suecsso!')
+      }
     })
   }
 
