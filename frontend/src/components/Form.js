@@ -1,17 +1,22 @@
-import React from 'react'
+import React from "react";
 
-export default function Form() {
+export default function Form({ button }) {
   return (
     <div>
-         <form>
-            <input type='text' placeholder='Name' className='form-control' />
-            <input type='text' placeholder='brand' className='form-control'/>
+      <form>
+        <input type="text" placeholder="Name" className="form-control" />
+        <input type="text" placeholder="brand" className="form-control" />
 
-            <input type='button' value='Register' className='btn btn-primary' />
-            <input type='button' value='Update' className='btn btn-warning'/>
-            <input type='button' value='Remove' className='btn btn-danger'/>
-            <input type='button' value='Cancel' className='btn btn-secondary' />
-         </form>
+        {button ? (
+          <input type="button" value="Register" className="btn btn-primary" />
+        ) : (
+          <div>
+            <input type="button" value="Update" className="btn btn-warning" />
+            <input type="button" value="Remove" className="btn btn-danger" />
+            <input type="button" value="Cancel" className="btn btn-secondary" />
+          </div>
+        )}
+      </form>
     </div>
-  )
+  );
 }
