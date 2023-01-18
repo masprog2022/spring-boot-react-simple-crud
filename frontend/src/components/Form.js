@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Form({ button }) {
+export default function Form({ button, eventKeyboard }) {
   return (
     <div>
       <form>
-        <input type="text" placeholder="Produto" className="form-control" />
-        <input type="text" placeholder="Marca" className="form-control" />
+        <input type="text" onChange={eventKeyboard} name="name" placeholder="Produto" className="form-control" />
+        <input type="text" onChange={eventKeyboard} name="brand" placeholder="Marca" className="form-control" />
 
         {button ? (
           <input type="button" value="Register" className="btn btn-primary" />

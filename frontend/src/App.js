@@ -29,12 +29,18 @@ function App() {
   
   }, [])
 
+  // get data form
+
+  const digit = (e) => {
+    setObjProduct({...objProduct, [e.target.name]:e.target.value})
+  }
+
   // Return
   return (
     <div>
       <p>{JSON.stringify(objProduct)}</p>
-      <Form button={btnRegister} />
-      <Table product={products} />
+         <Form button={btnRegister} eventKeyboard={digit} />
+         <Table product={products} />
     </div>
   );
 }
