@@ -60,6 +60,45 @@ function App() {
     })
   }
 
+    // Remove product
+
+    const remove = () => {
+
+      fetch('http://localhost:8080/products/'+objProduct.id, {
+        method: 'delete',
+        headers: {
+          'Content-type':'application/json',
+          'Accept':'application/json'
+        }
+  
+      })
+      .then(data => data.json())
+      .then(data_inverted => {
+         // message
+         alert(data_inverted.message)
+
+         // copy array product
+
+         let arrayTemp = [...products];
+
+         let index = arrayTemp.findIndex((p) => {
+            return p.id === objProduct.id;
+         })
+
+         // remove product array temp
+
+         arrayTemp.splice(index, 1)
+
+         // update array product
+
+         setProducts(arrayTemp)
+
+         // empty form
+
+         emptyForm()
+      })
+    }
+
   // empty form
 
   const emptyForm = () => {
@@ -77,7 +116,7 @@ function App() {
   // Return
   return (
     <div>
-         <Form button={btnRegister} eventKeyboard={digit} register={register} obj={objProduct} cancel={emptyForm}/>
+         <Form button={btnRegister} eventKeyboard={digit} register={register} obj={objProduct} cancel={emptyForm} remove={remove}/>
          <Table product={products} select={selectProduct} />
     </div>
   );

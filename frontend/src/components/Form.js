@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Form({ button, eventKeyboard, register, obj, cancel}) {
+export default function Form({ button, eventKeyboard, register, obj, cancel, remove}) {
   return (
     <div>
       <form>
@@ -12,7 +12,7 @@ export default function Form({ button, eventKeyboard, register, obj, cancel}) {
         ) : (
           <div>
             <input type="button" value="Update" className="btn btn-warning" />
-            <input type="button" value="Remove" className="btn btn-danger" />
+            <input type="button" value="Remove" onClick={remove} className="btn btn-danger" />
             <input type="button" value="Cancel" onClick={cancel} className="btn btn-secondary"  />
           </div>
         )}

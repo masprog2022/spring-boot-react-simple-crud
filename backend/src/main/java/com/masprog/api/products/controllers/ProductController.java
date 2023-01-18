@@ -17,7 +17,7 @@ import com.masprog.api.products.entities.Request;
 import com.masprog.api.products.services.ProductService;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(maxAge = 3600)
 @RequestMapping(value = "/products")
 public class ProductController {
 	
@@ -38,6 +38,7 @@ public class ProductController {
 	public ResponseEntity<?> save(@RequestBody Product product){
 		return productService.saveUpdate(product, "save");
 	}
+	
 	
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Request> delete(@PathVariable Long id){
