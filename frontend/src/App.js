@@ -64,6 +64,7 @@ function App() {
 
   const emptyForm = () => {
     setObjProduct(product)
+    setBtnRegister(true)
   }
 
   // Select product
@@ -76,7 +77,7 @@ function App() {
   // Return
   return (
     <div>
-         <Form button={btnRegister} eventKeyboard={digit} register={register} obj={objProduct} />
+         <Form button={btnRegister} eventKeyboard={digit} register={register} obj={objProduct} cancel={emptyForm}/>
          <Table product={products} select={selectProduct} />
     </div>
   );
