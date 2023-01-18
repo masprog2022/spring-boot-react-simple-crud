@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Form({ button, eventKeyboard }) {
+export default function Form({ button, eventKeyboard, register }) {
   return (
     <div>
       <form>
@@ -8,7 +8,7 @@ export default function Form({ button, eventKeyboard }) {
         <input type="text" onChange={eventKeyboard} name="brand" placeholder="Marca" className="form-control" />
 
         {button ? (
-          <input type="button" value="Register" className="btn btn-primary" />
+          <input type="button" value="Register" onClick={register} className="btn btn-primary" />
         ) : (
           <div>
             <input type="button" value="Update" className="btn btn-warning" />

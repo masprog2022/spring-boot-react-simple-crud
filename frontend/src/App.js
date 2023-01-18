@@ -35,11 +35,29 @@ function App() {
     setObjProduct({...objProduct, [e.target.name]:e.target.value})
   }
 
+  // register product
+
+  const register = () => {
+
+    fetch('http://localhost:8080/products', {
+      method: 'post',
+      body:JSON.stringify(objProduct),
+      headers: {
+        'Content-type':'application/json',
+        'Accept':'application/json'
+      }
+
+    })
+    .then(data => data.json())
+    .then(data_inverted => {
+      console.log(data_inverted)
+    })
+  }
+
   // Return
   return (
     <div>
-      <p>{JSON.stringify(objProduct)}</p>
-         <Form button={btnRegister} eventKeyboard={digit} />
+         <Form button={btnRegister} eventKeyboard={digit} register={register} />
          <Table product={products} />
     </div>
   );
