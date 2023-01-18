@@ -5,9 +5,20 @@ import Table from "./components/Table";
 
 function App() {
 
+  // Object product
+
+  const product = {
+
+    id: 0,
+    name: '',
+    brand: ''
+
+  }
+
   // UseState
   const [btnRegister, setBtnRegister] = useState(true);
   const [products, setProducts] = useState([])
+  const [objProduct, setObjProduct] = useState(product)
 
   // UseEffect
 
@@ -20,7 +31,8 @@ function App() {
 
   // Return
   return (
-    <div className="App">
+    <div>
+      <p>{JSON.stringify(objProduct)}</p>
       <Form button={btnRegister} />
       <Table product={products} />
     </div>
