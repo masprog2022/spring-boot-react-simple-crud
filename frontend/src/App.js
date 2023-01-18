@@ -7,23 +7,22 @@ function App() {
 
   // UseState
   const [btnRegister, setBtnRegister] = useState(true);
-  const [product, setProduct] = useState([])
+  const [products, setProducts] = useState([])
 
   // UseEffect
 
   useEffect(() => {
     fetch("http://localhost:8080/products")
     .then(data => data.json())
-    .then(data_inverted => setProduct(data_inverted))
+    .then(data_inverted => setProducts(data_inverted))
   
   }, [])
 
   // Return
   return (
     <div className="App">
-      <p>{JSON.stringify(product)}</p>
       <Form button={btnRegister} />
-      <Table />
+      <Table product={products} />
     </div>
   );
 }

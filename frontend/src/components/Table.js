@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Table() {
+export default function Table( {product} ) {
   return (
     <div>
          <table className='table'>
@@ -13,12 +13,16 @@ export default function Table() {
                 </tr>
             </thead>
              <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                  {
+                    product.map((obj, index) => (
+                        <tr key={index}>
+                        <td>{index+1}</td>
+                        <td>{obj.name}</td>
+                        <td>{obj.brand}</td>
+                        <td><button className='btn btn-success'>Selecionar</button></td>
+                    </tr>
+                    ))
+                  }
              </tbody>
          </table>
     </div>
